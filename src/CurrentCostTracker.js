@@ -57,14 +57,14 @@ export default function CurrentCostTracker() {
       keys.map((key, index) => {
         if (index % 3 === 0) arr2.push(key);
       });
-      console.log(arr);
       setPastDate(arr2);
       setPastCost(arr);
-      console.log(pastCost);
     };
     getPastData();
   }, [currency]);
 
+  //Function to change the currency on change of select
+  //value from drop down
   const handleChange = (e) => {
     setCurrency(e.target.value);
   };
@@ -95,21 +95,21 @@ export default function CurrentCostTracker() {
         {currency === "USD" &&
           currentData.map((current) => (
             <>
-              <h2>{current.bpi.USD.rate_float}</h2>
+              <h2>{current.bpi.USD.rate_float} </h2>
               <h4>{current.bpi.USD.description}</h4>
             </>
           ))}
         {currency === "GBP" &&
           currentData.map((current) => (
             <>
-              <h2>{current.bpi.GBP.rate_float}</h2>
+              <h2>{current.bpi.GBP.rate_float} </h2>
               <h4>{current.bpi.GBP.description}</h4>
             </>
           ))}
         {currency === "EUR" &&
           currentData.map((current) => (
             <>
-              <h2>{current.bpi.EUR.rate_float}</h2>
+              <h2>{current.bpi.EUR.rate_float} </h2>
               <h4>{current.bpi.EUR.description}</h4>
             </>
           ))}
